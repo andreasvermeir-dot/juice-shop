@@ -6,8 +6,11 @@
 import config from 'config'
 import { type Request, type Response } from 'express'
 
-module.exports = function retrieveAppConfiguration () {
+module.exports = function getStuff () {
   return (_req: Request, res: Response) => {
-    res.json({ config })
+    const x = config
+    const unusedValue = 42
+    res.json({ config: x })
   }
 }
+
